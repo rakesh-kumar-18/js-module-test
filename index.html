@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Rock, Paper & Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="heading-div">
+        <div id="heading-left">
+            <h1>ROCK</h1>
+            <h1>PAPER</h1>
+            <h1>SCISSORS</h1>
+        </div>
+        <div id="heading-right">
+            <div>
+                <small>COMPUTER</small>
+                <small>SCORE</small>
+                <h1>0</h1>
+            </div>
+            <div>
+                <small>YOUR</small>
+                <small>SCORE</small>
+                <h1>0</h1>
+            </div>
+        </div>
+    </div>
+    <div id="hands">
+        <div id="top-div">
+            <div id="st-line"></div>
+            <div id="first-line"></div>
+            <div id="second-line"></div>
+            <img src="./assets/rock.png" alt="rock" id="rock">
+            <img src="./assets/scissors.png" alt="scissor" id="scissor">
+        </div>
+        <div id="bottom-div">
+            <img src="./assets/paper.png" alt="paper" id="paper">
+        </div>
+    </div>
+    <div id="game-rules">
+        <button class="cross-btn">X</button>
+        <h1>Game Rules</h1>
+        <ul>
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper,
+                scissors.”
+            </li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+        </ul>
+    </div>
+    <button class="rules">RULES</button>
+    <script src="./script.js"></script>
+</body>
+
+</html>
