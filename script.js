@@ -2,7 +2,7 @@ const ruleBtn = document.querySelector("#rules");
 const crossBtn = document.querySelector(".cross-btn");
 const headingDiv = document.querySelector("#heading-div");
 const rulesDiv = document.querySelector("#game-rules");
-const handBtn = document.querySelectorAll(".hand");
+const handBtn = document.querySelectorAll("#hands .hand");
 const handsDiv = document.querySelector("#hands");
 const resDiv = document.querySelector("#result");
 const userChoice = document.querySelector("#user-choice img");
@@ -12,6 +12,17 @@ const subHeading = document.querySelector("#result-text h4");
 const playBtn = document.querySelectorAll(".play");
 const nextBtn = document.querySelector("#next");
 const winDiv = document.querySelector("#win-page");
+const compScoreEle = document.querySelector("#comp-score");
+const userScoreEle = document.querySelector("#user-score");
+
+let compScore = localStorage.getItem("computer") ?? 0;
+let userScore = localStorage.getItem("user") ?? 0;
+
+localStorage.setItem("computer", compScore);
+localStorage.setItem("user", userScore);
+
+compScoreEle.innerText = compScore;
+userScoreEle.innerText = userScore;
 
 ruleBtn.addEventListener("click", changeDisplay("flex"));
 crossBtn.addEventListener("click", changeDisplay("none"));
@@ -70,6 +81,13 @@ function displayResult(userHand, compHand) {
 	} else if (text === "YOU WIN") {
 		ruleBtn.style.right = "110px";
 		nextBtn.style.display = "inline";
+		userScore = parseInt(localStorage.getItem("user")) + 1;
+		localStorage.setItem("user", userScore);
+		userScoreEle.innerText = userScore;
+	} else {
+		compScore = parseInt(localStorage.getItem("computer")) + 1;
+		localStorage.setItem("computer", compScore);
+		compScoreEle.innerText = compScore;
 	}
 }
 
