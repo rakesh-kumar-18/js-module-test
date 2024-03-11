@@ -70,24 +70,25 @@ body {
     margin: auto 70px;
 }
 
-#hands img {
+.hand {
     background-color: #fff;
     border-radius: 50%;
     cursor: pointer;
     width: 60px;
     height: 60px;
     padding: 10px;
+    box-shadow: -1px 1px 11px 0px #00000059;
 }
 
-#hands #rock {
+#rock {
     border: 10px solid #0074B6;
 }
 
-#hands #scissor {
+#scissor {
     border: 10px solid #BD00FF;
 }
 
-#hands #paper {
+#paper {
     border: 10px solid #FFA943;
 }
 
@@ -172,5 +173,60 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    cursor: pointer;
+}
+
+#result {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    width: 60%;
+    margin: 7% auto;
+}
+
+#result #user-choice,
+#comp-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result p {
+    font-size: x-small;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+#result img {
+    padding: 20px;
+    box-shadow: -1px 1px 11px 0px #00000059;
+}
+
+#result #result-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+#result-text h1,
+h4 {
+    display: block;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#result-text button {
+    padding: 10px 25px;
+    color: #6B6B6B;
+    font-size: x-small;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 6px;
+    margin: 10px;
     cursor: pointer;
 }
