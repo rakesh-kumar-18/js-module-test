@@ -1,6 +1,17 @@
-const ruleBtn = document.querySelector(".rules");
+const ruleBtn = document.querySelector("#rules");
 const crossBtn = document.querySelector(".cross-btn");
+const headingDiv = document.querySelector("#heading-div");
 const rulesDiv = document.querySelector("#game-rules");
+const handBtn = document.querySelectorAll(".hand");
+const handsDiv = document.querySelector("#hands");
+const resDiv = document.querySelector("#result");
+const userChoice = document.querySelector("#user-choice img");
+const compChoice = document.querySelector("#comp-choice img");
+const result = document.querySelector("#result-text h1");
+const subHeading = document.querySelector("#result-text h4");
+const playBtn = document.querySelectorAll(".play");
+const nextBtn = document.querySelector("#next");
+const winDiv = document.querySelector("#win-page");
 
 ruleBtn.addEventListener("click", changeDisplay("flex"));
 crossBtn.addEventListener("click", changeDisplay("none"));
@@ -10,15 +21,6 @@ function changeDisplay(displayValue) {
 		rulesDiv.style.display = displayValue;
 	};
 }
-
-const handBtn = document.querySelectorAll(".hand");
-const handsDiv = document.querySelector("#hands");
-const resDiv = document.querySelector("#result");
-const userChoice = document.querySelector("#user-choice img");
-const compChoice = document.querySelector("#comp-choice img");
-const result = document.querySelector("#result-text h1");
-const subHeading = document.querySelector("#result-text h4");
-const playBtn = document.querySelector("#result-text button");
 
 const resText = (userHand, compHand) => {
 	const res = userHand + compHand;
@@ -54,7 +56,6 @@ const resText = (userHand, compHand) => {
 
 function displayResult(userHand, compHand) {
 	const text = resText(userHand, compHand);
-	console.log(userHand);
 	handsDiv.style.display = "none";
 	resDiv.style.display = "flex";
 	userChoice.src = `./assets/${userHand}.png`;
@@ -66,12 +67,10 @@ function displayResult(userHand, compHand) {
 		subHeading.style.display = "none";
 		playBtn.innerText = "REPLAY";
 		result.style.marginBottom = "20px";
-	} else {
-		subHeading.style.display = "block";
-		playBtn.innerText = "PLAY AGAIN";
-		result.style.marginBottom = "0";
+	} else if (text === "YOU WIN") {
+		ruleBtn.style.right = "110px";
+		nextBtn.style.display = "inline";
 	}
-	console.log(compHand);
 }
 
 const choices = ["rock", "paper", "scissor"];
@@ -82,14 +81,29 @@ const comp = () => {
 };
 
 handBtn.forEach((hand) => {
-	// const compPick = comp();
-	const userPick = hand.id;
 	hand.addEventListener("click", () => {
-		displayResult(userPick, comp());
+		displayResult(hand.id, comp());
 	});
 });
 
-playBtn.addEventListener("click", () => {
-	handsDiv.style.display = "flex";
+playBtn.forEach((play) => {
+	play.addEventListener("click", () => {
+		headingDiv.style.display = "flex";
+		handsDiv.style.display = "flex";
+		winDiv.style.display = "none";
+		resDiv.style.display = "none";
+		subHeading.style.display = "block";
+		playBtn.innerText = "PLAY AGAIN";
+		result.style.marginBottom = "0";
+		ruleBtn.style.right = "20px";
+		nextBtn.style.display = "none";
+	});
+});
+
+nextBtn.addEventListener("click", () => {
+	headingDiv.style.display = "none";
 	resDiv.style.display = "none";
+	winDiv.style.display = "block";
+	ruleBtn.style.right = "20px";
+	nextBtn.style.display = "none";
 });

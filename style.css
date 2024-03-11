@@ -164,16 +164,26 @@ body {
     color: #FFD600;
 }
 
-.rules {
+.btn {
     background: transparent;
     color: #fff;
     border: 2px solid #fff;
     border-radius: 5px;
     padding: 5px 15px;
-    position: fixed;
+    cursor: pointer;
+}
+
+#rules {
+    position: absolute;
     bottom: 20px;
     right: 20px;
-    cursor: pointer;
+}
+
+#next {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: none;
 }
 
 #result {
@@ -219,7 +229,7 @@ h4 {
     letter-spacing: 1px;
 }
 
-#result-text button {
+.play {
     padding: 10px 25px;
     color: #6B6B6B;
     font-size: x-small;
@@ -229,4 +239,36 @@ h4 {
     border-radius: 6px;
     margin: 10px;
     cursor: pointer;
+}
+
+#win-page {
+    background-image: url("./assets/stars.png");
+    background-repeat: no-repeat;
+    background-position: center 50px;
+    text-align: center;
+    height: 100vh;
+    background-size: 30vw;
+    color: #fff;
+    display: none;
+}
+
+#win-page img {
+    width: 12%;
+    margin-top: 120px;
+}
+
+#win-page h1 {
+    margin: 20px auto 0;
+    font-size: 70px;
+    letter-spacing: 3px;
+}
+
+#win-page h4 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+#win-page .play {
+    margin: 50px;
 }
