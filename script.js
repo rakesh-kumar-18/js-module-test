@@ -76,7 +76,7 @@ function displayResult(userHand, compHand) {
 	result.innerText = text;
 	if (text === "TIE UP") {
 		subHeading.style.display = "none";
-		playBtn.innerText = "REPLAY";
+		playBtn[0].innerText = "REPLAY";
 		result.style.marginBottom = "20px";
 	} else if (text === "YOU WIN") {
 		ruleBtn.style.right = "110px";
@@ -113,7 +113,7 @@ playBtn.forEach((play) => {
 		winDiv.style.display = "none";
 		resDiv.style.display = "none";
 		subHeading.style.display = "block";
-		playBtn.innerText = "PLAY AGAIN";
+		play.innerText = "PLAY AGAIN";
 		result.style.marginBottom = "0";
 		ruleBtn.style.right = "20px";
 		nextBtn.style.display = "none";
