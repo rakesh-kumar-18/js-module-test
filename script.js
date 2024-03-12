@@ -84,10 +84,12 @@ function displayResult(userHand, compHand) {
 		userScore = parseInt(localStorage.getItem("user")) + 1;
 		localStorage.setItem("user", userScore);
 		userScoreEle.innerText = userScore;
+		userChoice.classList.add("res-hand");
 	} else {
 		compScore = parseInt(localStorage.getItem("computer")) + 1;
 		localStorage.setItem("computer", compScore);
 		compScoreEle.innerText = compScore;
+		compChoice.classList.add("res-hand");
 	}
 }
 
@@ -115,6 +117,8 @@ playBtn.forEach((play) => {
 		result.style.marginBottom = "0";
 		ruleBtn.style.right = "20px";
 		nextBtn.style.display = "none";
+		userChoice.classList.remove("res-hand");
+		compChoice.classList.remove("res-hand");
 	});
 });
 
